@@ -35,7 +35,7 @@ import App from './App.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-   <Router>
+   <Router basename="/">
     <Header/>
     <Routes> 
       <Route path="/" element={<App />} />
