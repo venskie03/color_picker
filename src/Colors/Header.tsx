@@ -5,43 +5,61 @@ export default function Header() {
   const [shownav, setshownav] = useState("hidden");
   const [showicon, setshowicon] = useState("");
   const [showicon2, setshowicon2] = useState("hidden");
-  const showDataOptions = () => {
+  const [showOptions2, setOptions2] = useState("hidden");
 
+
+  const showDataOptions = () => {
+    setshownav("hidden")
     setOptions("flex")
+    setshowicon2("hidden")
+
   }
 
   const disabledata = () => {
-
+    
     setOptions("hidden")
   }
 
   const shownavigation = () => {
-
+    setshownav("grid")
     setshowicon2("flex")
     setshowicon("hidden")
+    setOptions("hidden")
   }
 
   
   const disablenavigation = () => {
 setshowicon2("hidden")
 setshowicon("flex")
+setshownav("hidden")
   }
+
+  const shownavigation1 = () => {
+    setOptions2("flex")
+    setshownav("hidden")
+    setshowicon("flex")
+    setshowicon2("hidden")
+  } 
+
+  
+  
+  
 
 
   return (
   <div className="">
       <div className="bg-gray-950 w-full text-white flex md:justify-evenly justify-between md:p-0 p-2 md:py-3 fixed">
      <div className="flex font-bold gap-2">
-        <p  className="font-bold text-4xl mt-2"><ion-icon name="color-palette-outline"></ion-icon></p>
-       <h1 className="headline font-bold text-lg mt-3"> Color Picker</h1>
+        <a href="/"  className="font-bold text-4xl mt-2"><ion-icon name="color-palette-outline"></ion-icon></a>
+       <a href="/" className="headline font-bold text-lg mt-3"> Color Picker</a>
      </div>
      
      <div className="gap-6 hidden  md:flex mt-3">
      <div className="flex gap-6 mt-1">
-     <a href="">Home</a>
-        <a href="">Popular Colors</a>
-        <a href="">New Colors</a>
-        <a href="">Api Docs</a>
+     <a href="/">Home</a>
+        <a href="/newcolors">New Colors</a>
+        <a target="_blank" href="https://kevinkyleganados.netlify.app/">Contact Me</a>
+        <a href="/apidocs">Api Docs</a>
      </div>
         <div className="relative inline-block text-left">
   <div>
@@ -53,30 +71,30 @@ setshowicon("flex")
     </button>
   </div>
 
-  <div onClick={disabledata} onMouseLeave={disabledata} className={`absolute ${showOptions} right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+  <div onClick={disabledata} onMouseLeave={disabledata} className={`absolute ${showOptions} right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray-950 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
     <div className="py-1" role="none">
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Christmass</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Coffee</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Cold</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Earth</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Food</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Halloween</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Happy</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Kids</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Light</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Nature</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Neon</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Night</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Rainbow</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Retro</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Sea</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Skin</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Sky</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Space</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Spring</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Summer</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Sunset</a>
-      <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Warm</a>
+    <a href="/christmascolors" className="text-gray-50 block px-4 py-2 text-sm " role="menuitem" id="menu-item-0">Christmass</a>
+      <a href="/coffeecolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-1">Coffee</a>
+      <a href="/coldcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Cold</a>
+      <a href="/earthcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Earth</a>
+      <a href="/foodcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Food</a>
+      <a href="/halloweencolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Halloween</a>
+      <a href="/happycolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Happy</a>
+      <a href="/kidscolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Kids</a>
+      <a href="/lightcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Light</a>
+      <a href="/naturecolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Nature</a>
+      <a href="/neoncolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Neon</a>
+      <a href="/nightcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Night</a>
+      <a href="/rainbowcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Rainbow</a>
+      <a href="/retrocolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Retro</a>
+      <a href="/seacolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Sea</a>
+      <a href="/skincolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Skin</a>
+      <a href="/skycolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Sky</a>
+      <a href="/spacecolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Space</a>
+      <a href="/springcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Spring</a>
+      <a href="/summercolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Summer</a>
+      <a href="sunsetcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Sunset</a>
+      <a href="/warmcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Warm</a>
     </div>
   </div>
 </div>
@@ -95,40 +113,41 @@ setshowicon("flex")
 
 
 
-    <div className="gap-6  grid hidden">
-    <div onClick={disabledata} onMouseLeave={disabledata} className={`absolute ${showOptions} bg-gray-950 rounded-r-2xl border p-4 `} role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
+    <div className="gap-6   grid w-full">
+  <div className="py-14">
+  <div className={`fixed ${showOptions2} bg-gray-950 rounded-r-lg p-4 h-[450px] overflow-scroll`} role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
     <div className="py-1 space-y-4 " role="none">
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm " role="menuitem" tabindex="-1" id="menu-item-0">Christmass</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Coffee</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Cold</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Earth</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Food</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Halloween</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Happy</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Kids</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Light</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Nature</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Neon</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Night</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Rainbow</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Retro</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Sea</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Skin</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Sky</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Space</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Spring</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Summer</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Sunset</a>
-      <a href="#" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Warm</a>
+      <a href="/christmascolors" className="text-gray-50 block px-4 py-2 text-sm " role="menuitem" id="menu-item-0">Christmass</a>
+      <a href="/coffeecolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-1">Coffee</a>
+      <a href="/coldcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Cold</a>
+      <a href="/earthcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Earth</a>
+      <a href="/foodcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Food</a>
+      <a href="/halloweencolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Halloween</a>
+      <a href="/happycolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Happy</a>
+      <a href="/kidscolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Kids</a>
+      <a href="/lightcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Light</a>
+      <a href="/naturecolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Nature</a>
+      <a href="/neoncolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Neon</a>
+      <a href="/nightcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Night</a>
+      <a href="/rainbowcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Rainbow</a>
+      <a href="/retrocolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Retro</a>
+      <a href="/seacolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Sea</a>
+      <a href="/skincolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Skin</a>
+      <a href="/skycolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Sky</a>
+      <a href="/spacecolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Space</a>
+      <a href="/springcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Spring</a>
+      <a href="/summercolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-2">Summer</a>
+      <a href="sunsetcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Sunset</a>
+      <a href="/warmcolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem"  id="menu-item-2">Warm</a>
     </div>
   </div>
-     <div className="grid items-center justify-center text-center p-5 gap-6 mt-1 bg-slate-950 text-white ">
+  </div>
+     <div className={`${shownav} items-center justify-center text-center p-5 gap-6 py-20 bg-slate-950 text-white fixed w-full h-screen`}>
       
-     <a className="py-2" href="">Home</a>
-        <a className="py-2" href="">Popular Colors</a>
-        <a className="py-2" href="">New Colors</a>
-        <a className="py-2" href="">Api Docs</a>
-        <button onClick={showDataOptions} onMouseEnter={showDataOptions} type="button" className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+     <a className="py-2" href="/">Home</a>
+        <a className="py-2" href="/newcolors">New Colors</a>
+        <a className="py-2" href="/apidocs">Api Docs</a>
+        <button onClick={shownavigation1}  type="button" className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
       Select a Theme
       <svg className="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />

@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Neon from './Colors/Neon.tsx';
@@ -30,13 +29,15 @@ import Christmass from './Colors/Christmass.tsx';
 import Halloween from './Colors/Halloween.tsx';
 import Header from './Colors/Header.tsx';
 import Apidocs from './Colors/Apidocs.tsx';
+import Newcolors from './Colors/Newcolors.tsx';
+import Popular from './Colors/Popular.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
    <Router>
     <Header/>
     <Routes> 
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<Popular />} />
       <Route path="/neoncolors" element={<Neon />} />
       <Route path="/warmcolors" element={<Warm />} />
       <Route path="/lightcolors" element={<Light />} />
@@ -65,6 +66,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Route path="/christmascolors" element={<Christmass />} />
       <Route path="/halloweencolors" element={<Halloween />} />
       <Route path="/apidocs" element={<Apidocs />} />
+
+      <Route path="/newcolors" element={<Newcolors />} />
     </Routes> 
   </Router>
   </React.StrictMode>,
