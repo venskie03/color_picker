@@ -1,12 +1,14 @@
 import { useState } from "react"
-
 export default function Header() {
   const [showOptions, setOptions] = useState("hidden");
   const [shownav, setshownav] = useState("hidden");
   const [showicon, setshowicon] = useState("");
   const [showicon2, setshowicon2] = useState("hidden");
   const [showOptions2, setOptions2] = useState("hidden");
+  const ioniconlogo = `<ion-icon name="color-palette-outline"></ion-icon>`
 
+  const menuoutline = `<ion-icon name="menu-outline"></ion-icon>`
+  const closemenu = `<ion-icon name="close-outline"></ion-icon>`
 
   const showDataOptions = () => {
     setshownav("hidden")
@@ -48,9 +50,9 @@ setshownav("hidden")
 
   return (
   <div className="">
-      <div className="bg-gray-950 w-full text-white flex md:justify-evenly justify-between md:p-0 p-2 md:py-3 fixed">
+      <div className="bg-gray-950 w-full text-white flex md:justify-evenly justify-between md:p-0 p-2 md:py-3 fixed z-50">
      <div className="flex font-bold gap-2">
-        <a href="/"  className="font-bold text-4xl mt-2"><ion-icon name="color-palette-outline"></ion-icon></a>
+     <a href="/" className="font-bold text-4xl mt-2" dangerouslySetInnerHTML={{ __html: ioniconlogo }}></a>
        <a href="/" className="headline font-bold text-lg mt-3"> Color Picker</a>
      </div>
      
@@ -71,7 +73,7 @@ setshownav("hidden")
     </button>
   </div>
 
-  <div onClick={disabledata} onMouseLeave={disabledata} className={`absolute ${showOptions} right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray-950 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+  <div onClick={disabledata} onMouseLeave={disabledata} className={`absolute ${showOptions} right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray-950 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" >
     <div className="py-1" role="none">
     <a href="/christmascolors" className="text-gray-50 block px-4 py-2 text-sm " role="menuitem" id="menu-item-0">Christmass</a>
       <a href="/coffeecolors" className="text-gray-50 block px-4 py-2 text-sm" role="menuitem" id="menu-item-1">Coffee</a>
@@ -99,11 +101,10 @@ setshownav("hidden")
   </div>
 </div>
      </div>
-        <p onClick={shownavigation} className={`${showicon} md:hidden text-3xl mt-2.5`}>
-        <ion-icon name="menu-outline"></ion-icon>
+        <p onClick={shownavigation} className={`${showicon} md:hidden text-3xl mt-2.5`}  dangerouslySetInnerHTML={{ __html: menuoutline }}>
+      
         </p>
-        <p onClick={disablenavigation} className={`${showicon2} text-3xl mt-2.5`}>
-        <ion-icon name="close-outline"></ion-icon>
+        <p onClick={disablenavigation} className={`${showicon2} text-3xl mt-2.5`}  dangerouslySetInnerHTML={{ __html: closemenu }}>
         </p>
    
     </div>
@@ -142,7 +143,7 @@ setshownav("hidden")
     </div>
   </div>
   </div>
-     <div className={`${shownav} items-center justify-center text-center p-5 gap-6 py-20 bg-slate-950 text-white fixed w-full h-screen`}>
+     <div className={`${shownav} items-center justify-center text-center p-5 gap-6 py-20 bg-slate-950 text-white fixed z-10 w-full h-screen`}>
       
      <a className="py-2" href="/">Home</a>
         <a className="py-2" href="/newcolors">New Colors</a>
