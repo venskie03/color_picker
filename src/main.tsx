@@ -30,14 +30,15 @@ import Halloween from './Colors/Halloween.tsx';
 import Header from './Colors/Header.tsx';
 import Apidocs from './Colors/Apidocs.tsx';
 import Newcolors from './Colors/Newcolors.tsx';
-import Popular from './Colors/Popular.tsx';
+
+import App from './App.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
    <Router>
     <Header/>
     <Routes> 
-      <Route path="/" element={<Popular />} />
+      <Route path="/" element={<App />} />
       <Route path="/neoncolors" element={<Neon />} />
       <Route path="/warmcolors" element={<Warm />} />
       <Route path="/lightcolors" element={<Light />} />
